@@ -36,5 +36,13 @@ def not_found(e):
 def error(e):
     return render_template("500.html")
 
+def run():
+    app.run(host='0.0.0.0')
 
-app.run()
+
+def show_site():
+    t = Thread(target=run)
+    t.start()
+
+
+run()
