@@ -2,6 +2,9 @@ from flask import Flask, render_template, request
 from threading import Thread
 from flask.helpers import send_file, url_for
 from downloader import downloader
+from flask import after_this_request
+import os
+import io
 
 app = Flask('')
 
@@ -14,8 +17,14 @@ def home():
 @app.route('/result', methods=['POST'])
 def result():
     playlist = request.form['playlist']
-    zip_path = downloader(playlist)
-    return send_file(zip_path, as_attachment=True)
+    file_path = downloader(playlist)
+    return_data = io.BytesIO()
+    with open(file_path, 'rb') as fo:
+        return_data.write(fo.read())
+    return_data.seek(0)
+    os.remove(file_path)
+    return send_file(return_data, mimetype='application/zip',
+                     attachment_filename='songs.zip')
 
 
 @app.errorhandler(404)
