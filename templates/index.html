@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/styles/style.css">
+    <link rel="icon" href="/static/icon.ico">
+    <title>LoadIt</title>
+</head>
+
+<body>
+    <section style="background: #2b2e34;">
+        <h1 class="title-text">Welcome to LoadIt</h1><br>
+        <h1 class="about-text">Want to Download your <span style="color: #1ccc5b;">Spotify</span> and <span
+                style="color: #f20000;">Youtube</span> playlists?</h1><br>
+        <h3 class="about-text" style="font-size: x-large;">You have Come to the right place!</h3>
+    </section>
+    <div class="spacer layer1"></div>
+    <section style="background: #2a2d6e; padding-top: 10px;">
+        <h3 class="about-text">Use the form below to download your playlists!</h3>
+        <h3 class="about-text" style="font-size: x-large;">This Process will take 2-10 minutes depending on the size of
+            your playlist</h3>
+        <h3 class="about-text" style="font-size: x-large;">We have a limit of 100 songs per download!</h3>
+        <form action="/result" method="post" id="form">
+            <label for="playlist" class="about-text">Paste the url of your <span style="color: #1ccc5b;">Spotify</span>
+                or <span style="color: #f20000;">Youtube</span> playlist</label><br><br>
+            <input type="text" id="playlist" name="playlist" placeholder="Enter the URL of your playlist here"><br><br>
+        </form>
+        <button class="button-s" type="submit" form="form" value="Submit">Get Zip File!</button>
+    </section>
+    <div class="spacer layer2"></div>
+    <section style="background: #00a8f3;">
+        <h1 class="about-text">Credits</h1>
+        <h1 class="about-text" style="font-size: x-large;">Made by <a
+                href="https://realhardik18.github.io">Realhardik18</a> For <a
+                href="https://en.wikipedia.org/wiki/Society">Society</a></h1>
+        <h1 class="about-text" style="font-size: xx-large;"><a style="color: #2b2e34"
+                href="https://github.com/realhardik18/LoadIt">source
+                code</a></h1>
+    </section>
+</body>
+
+</html>
